@@ -1,0 +1,33 @@
+
+.navbar{
+  background-color:firebrick
+}
+.toolbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  background-color: #ae4532;
+}
+
+.logo {
+  font-weight: bold;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  color: #ffecb3;
+}
+
+.nav-links a .nav-button {
+  color: beige;
+}
+
+.nav-button {
+  background-color: #d25a19; 
+  color: #ffffff;            
+  font-weight: 600;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.nav-button:hover {
+  background-color: #d2b48c;
+  transform: scale(1.05);
+}
