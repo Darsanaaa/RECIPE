@@ -67,11 +67,12 @@ const Add = () => {
 >
   <option value="">Select Category</option>
   <option value="CHICKEN">CHICKEN</option>
+  <option value="MUTTON">MUTTON</option>
   <option value="BEEF">BEEF</option>
   <option value="EGG">EGG</option>
   <option value="VEGGIES">VEGGIES</option>
-  <option value="PORK">VEGGIES</option>
-  <option value="SEAFOOD">VEGGIES</option>
+  <option value="PORK">PORK</option>
+  <option value="SEAFOOD">SEAFOOD</option>
   <option value="DESSERT">DESSERT</option>
 </select>
 <br /><br />
