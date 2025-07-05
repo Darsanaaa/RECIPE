@@ -3,7 +3,7 @@ import { Card, CardMedia, CardContent, Grid, Button, TextField } from '@mui/mate
 import { useNavigate } from 'react-router-dom';
 import axios from 'axios';
 
-const filters = ["BEEF", "CHICKEN", "PORK", "VEGGIES", "SEAFOOD", 'EGG'];
+const filters = ["BEEF", "CHICKEN", "PORK", "VEGGIES", "SEAFOOD", 'EGG','DESSERT'];
 
 const Recipes = () => {
   const [recipes, setRecipes] = useState([]);
