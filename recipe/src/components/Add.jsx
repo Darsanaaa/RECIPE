@@ -35,7 +35,7 @@ const Add = () => {
 
   return (
     <div style={{
-      backgroundImage: "url('https://www.shutterstock.com/image-photo/food-background-spices-herbs-utensil-600nw-2254302831.jpg')",
+      backgroundImage: "url('https://www.baltana.com/files/wallpapers-2/Food-HD-Images-04860.jpg')",
       backgroundSize: 'cover',
       backgroundPosition: 'center',
       backgroundRepeat: 'no-repeat',

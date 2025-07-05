@@ -6,9 +6,10 @@ const Signup = () => {
   const navigate = useNavigate();
 
   const handleSignup = async () => {
-    const name = document.querySelectorAll("input")[0].value;
-    const email = document.querySelectorAll("input")[1].value;
-    const password = document.querySelectorAll("input")[4].value;
+    const inputs = document.querySelectorAll("input");
+    const name = inputs[0].value;
+    const email = inputs[1].value;
+    const password = inputs[4].value;
 
     const res = await fetch("http://localhost:5000/api/signup", {
       method: "POST",
@@ -19,26 +20,57 @@ const Signup = () => {
     const data = await res.json();
     if (res.ok) {
       alert("Signup successful");
-      navigate("/login"); 
+      navigate("/login");
     } else {
       alert(data.error || "Signup failed");
     }
   };
 
+  const fieldProps = {
+    variant: "outlined",
+    InputProps: {
+      style: { color: 'black', backgroundColor: 'white', borderRadius: '5px' }
+    },
+    InputLabelProps: { style: { color: 'black' } },
+    style: { marginBottom: '15px', width: '300px' }
+  };
+
   return (
-    <div>
-      <center>
+<div style={{
+  backgroundImage: "url('https://thumbs.dreamstime.com/b/hot-spices-seasonings-powder-splash-explosion-black-background-flame-chili-peppers-wooden-bowls-flying-over-fire-266597100.jpg')",
+  backgroundSize: 'cover',
+  backgroundPosition: 'center',
+  backgroundRepeat: 'no-repeat',
+  minHeight: '100vh',
+  width: '100%',
+  display: 'flex',
+  justifyContent: 'center',
+  alignItems: 'center',
+  padding: '50px 0' 
+}}>
+
+      <div style={{
+        backgroundColor: 'rgba(0,0,0,0.6)',
+        height: '100%',
+        display: 'flex',
+        flexDirection: 'column',
+        justifyContent: 'center',
+        alignItems: 'center',
+        color: 'white'
+      }}>
         <h1>SIGNUP</h1>
-      </center>
-      <div style={{display:'flex',justifyContent:'center',alignItems:'center',flexDirection:'column',height:'100vh'}}>
-      <TextField label="Name" variant="outlined"  /><br />
-      <TextField label="Email" variant="outlined"  /><br />
-      <TextField label="Age" variant="outlined"  /><br />
-      <TextField label="Phone Number" variant="outlined"  /><br />
-      <TextField label="Password" variant="outlined" type="password" /><br />
-      <Button variant="contained" style={{ backgroundColor: 'brown', color: 'black' }} onClick={handleSignup}>
-        SIGNUP
-      </Button>
+        <TextField label="Name" {...fieldProps} />
+        <TextField label="Email" {...fieldProps} />
+        <TextField label="Age" {...fieldProps} />
+        <TextField label="Phone Number" {...fieldProps} />
+        <TextField label="Password" type="password" {...fieldProps} />
+        <Button
+          variant="contained"
+          onClick={handleSignup}
+          style={{ backgroundColor: 'orange', color: 'black' }}
+        >
+          SIGNUP
+        </Button>
       </div>
     </div>
   );

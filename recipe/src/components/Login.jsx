@@ -23,27 +23,51 @@ const Login = () => {
       localStorage.setItem("isAdmin", data.user.isAdmin ? "true" : "false");
 
       alert("Login successful");
-      navigate("/recipes"); 
+      navigate("/recipes");
     } else {
       alert(data.message || "Login failed");
     }
   };
 
   return (
-    <div>
-      <center>
+    <div
+      style={{
+        backgroundImage: "url('https://thumbs.dreamstime.com/b/hot-spices-seasonings-powder-splash-explosion-black-background-flame-chili-peppers-wooden-bowls-flying-over-fire-266597100.jpg')",
+        backgroundSize: 'cover',
+        backgroundPosition: 'center',
+        minHeight: '100vh',
+        width: '100%',
+        padding: '0',
+        margin: '0',
+      }}
+    >
+      <div style={{
+        backgroundColor: 'rgba(0,0,0,0.6)',
+        height: '100vh',
+        color: 'white',
+        display: 'flex',
+        flexDirection: 'column',
+        justifyContent: 'center',
+        alignItems: 'center'
+      }}>
         <h1>LOGIN</h1>
-      </center>
-      <div style={{display:'flex',justifyContent:'center',alignItems:'center',flexDirection:'column',height:'100vh'}}>
-      <h1>Please enter the credentials...!</h1>
-      EMAIL: <input type="email" /><br />
-      PASSWORD: <input type="password" /><br />
-      <Button variant="contained" style={{ backgroundColor: 'brown', color: 'black' }} onClick={handleLogin}>
-        LOGIN
-      </Button>
+        <h2>Please enter the credentials...!</h2>
+        EMAIL: <input type="email" style={inputStyle} /><br />
+        PASSWORD: <input type="password" style={inputStyle} /><br />
+        <Button variant="contained" style={{ backgroundColor: 'orange', color: 'black' }} onClick={handleLogin}>
+          LOGIN
+        </Button>
       </div>
     </div>
   );
+};
+
+const inputStyle = {
+  padding: '10px',
+  margin: '10px',
+  borderRadius: '5px',
+  border: '1px solid #ccc',
+  fontSize: '16px',
 };
 
 export default Login;
